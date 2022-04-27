@@ -7,8 +7,12 @@ pipeline {
                 }  
             }
             stage ('build') {
-            steps {
-                 build env_index.html
+            tools {
+             maven maven 'maven 3.8.5'
+             }
+            steps { 
+            sh 'maven clean build'
+                
                  }
                  }
         }

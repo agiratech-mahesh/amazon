@@ -11,7 +11,7 @@ pipeline {
              maven 'maven 3.6'
              }
             steps { 
-            sh 'mvn clean build'
+            build complete
                 
                  }
                  }

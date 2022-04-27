@@ -8,7 +8,7 @@ pipeline {
             }
             stage ('build') {
             steps {
-                 build index.html
+                 build env_index.html
                  }
                  }
         }

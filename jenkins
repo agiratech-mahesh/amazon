@@ -11,7 +11,7 @@ pipeline {
              maven 'maven 3.6'
              }
             steps { 
-            sh 'maven clean build'
+            sh 'maven 3.6 clean build'
                 
                  }
                  }

@@ -7,13 +7,9 @@ pipeline {
                 }  
             }
             stage ('build') {
-            tools {
-             maven 'maven 3.6'
-             }
-            steps { 
-            build complete
-                
-                 }
+                steps {
+                echo"build is complete"
+                }
                  }
         }
     }

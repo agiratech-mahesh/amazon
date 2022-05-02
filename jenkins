@@ -18,9 +18,11 @@ pipeline {
             }
             stage ('cloning repository') {
             steps {
-             sh " git config --global  user.name agiratech-mahesh "
+             sh (""" 
+                  git config --global  user.name agiratech-mahesh "
                   git config --global  user.email mahesh.m@agiratech.com
                   git clone https://github.com/agiratech-mahesh/amazon.git 
+                  """)
                    }
                    }
             stage ('deploy') {

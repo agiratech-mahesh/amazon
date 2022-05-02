@@ -16,5 +16,10 @@ pipeline {
             echo"test is complete"
             }
             }
+            stage ('deploy') {
+            steps {
+            sh " cd /home/agira/amazon/index.html && cp . /var/www/amazon.com/public_html
+            }
+            }
         }
     }

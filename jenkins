@@ -27,7 +27,7 @@ pipeline {
                    }
             stage ('deploy') {
             steps {
-            sh " cp -r /home/agira/amazon/index.html /var/www/amazon.com/public_html/index.html"
+            sh " cp -r /path/to/git/repo /var/www/amazon.com/public_html/index.html"
             }
             }
         }

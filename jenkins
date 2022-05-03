@@ -1,20 +1,19 @@
-node{
-    try {
-      stage('cloning repository') {
-      checkout scm
+pipeline {
+   agent any
+   stages {
+   stage ('cloning repository') {
+   steps {
+   sh ("""
+        git config --global  user.name agiratech-mahesh
+        git config --global  user.email mahesh.m@agiratech.com
+        git clone https://github.com/agiratech-mahesh/amazon.git
+        """)
+        }
+        }
+   stage ('copying file to localhost') {
+   steps {
+      sh " cp -r /var/lib/jenkins/workspace/amazon/index.html /var/lib/amazon.com/public_html/index.html"
       }
-      stage('cloning repository') {
-       sh "cd /path/to/git/repo && cp . /var/www/amazon.com/public_html/"
-       }
-        catch(exception) {
-
-        echo "${exception}"
-    }
-    finally {
-
-        // Clean up the workspace after finish the job.
-        deleteDir()
-    }
-
-       }
+      }
+      }
       }

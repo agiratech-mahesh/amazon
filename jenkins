@@ -7,4 +7,4 @@ node{
        sh "cd /path/to/git/repo && cp . /var/www/amazon.com/public_html/"
        }
        }
-      
+      }

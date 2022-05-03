@@ -4,6 +4,6 @@ node {
      sh"  git clone https://github.com/agiratech-mahesh/amazon.git "
      }
      stage ('deploy') {
-     sh " cd /var/lib/jenkins/amazon && cp . /var/www/amazon.com/public_html/"
+     sh " cp /index.html /var/www/amazon.com/public_html/"
      }
      }

@@ -12,7 +12,7 @@ pipeline {
         }
    stage ('copying file to localhost') {
    steps {
-      sh " cp -r /var/lib/jenkins/workspace/amazon/index.html /var/lib/amazon.com/public_html/"
+      sh " sh "cd /var/lib/jenkins/amazon/index.html && cp . /var/www/amazon.com/public_html/"
       }
       }
       }

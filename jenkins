@@ -1,34 +1,10 @@
-pipeline { 
-    agent any 
-        stages { 
-            stage ('checkout') { 
-                steps { 
-                     checkout scm
-                }  
-            }
-            stage ('build') {
-                steps {
-                echo"build is complete"
-                }
-                 }
-            stage ('test') {
-            steps {
-            echo"test is complete"
-            }
-            }
-            stage ('cloning repository') {
-            steps {
-             sh (""" 
-                  git config --global  user.name agiratech-mahesh 
-                  git config --global  user.email mahesh.m@agiratech.com
-                  git clone https://github.com/agiratech-mahesh/amazon.git 
-                  """)
-                   }
-                   }
-            stage ('deploy') {
-            steps {
-            sh " cp -r /path/to/git/repo /var/www/amazon.com/public_html/index.html"
-            }
-            }
-        }
-    }
+node{
+    try {
+      stage('cloning repository') {
+      checkout scm
+      }
+      stage('cloning repository') {
+       sh "cd /path/to/git/repo && cp . /var/www/amazon.com/public_html/"
+       }
+       }
+      

@@ -1,19 +1,5 @@
-pipeline {
-   agent any
-   stages {
-   stage ('cloning repository') {
-   steps {
-   sh ("""
-        git config --global  user.name agiratech-mahesh
-        git config --global  user.email mahesh.m@agiratech.com
-        git clone https://github.com/agiratech-mahesh/amazon.git
-        """)
-        }
-        }
-   stage ('copying file to localhost') {
-   steps {
-      sh "cd /var/lib/jenkins/amazon" }
-      }
-      }
-      }
-      
+node {
+     stage ('cloning repository') {
+     checkout scm
+     }
+     }

@@ -13,9 +13,6 @@ pipeline {
    stage ('copying file to localhost') {
    steps {
       sh "cd /var/lib/jenkins/amazon" }
-      steps{ 
-      sh" cp . /var/lib/jenkins/amazon/index.html /var/www/amazon.com/public_html/"
-      }
       }
       }
       }

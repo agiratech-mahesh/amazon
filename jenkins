@@ -2,6 +2,8 @@ node {
      stage ('cloning repository') {
      checkout scm
      sh"  git clone https://github.com/agiratech-mahesh/amazon.git "
+     }
+     stage ('deploy') {
      sh " cp -r /var/lib/jenkins/amazon /var/www/amazon.com/public_html/"
      }
      }

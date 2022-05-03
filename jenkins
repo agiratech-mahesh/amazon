@@ -6,5 +6,15 @@ node{
       stage('cloning repository') {
        sh "cd /path/to/git/repo && cp . /var/www/amazon.com/public_html/"
        }
+        catch(exception) {
+
+        echo "${exception}"
+    }
+    finally {
+
+        // Clean up the workspace after finish the job.
+        deleteDir()
+    }
+
        }
       }

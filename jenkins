@@ -9,8 +9,8 @@ pipeline {
             stage ('build') {
                 steps {
                 echo"build is complete"
+           //     }
                 }
-    //             }
             stage ('test') {
             steps {
             echo"test is complete"
@@ -27,8 +27,8 @@ pipeline {
                    }
             stage ('deploy') {
             steps {
-          //  sh " cp -r /var/lib/jenkins/workspace/amazon/index.html /var/www/amazon.com/public_html"
-         //   }
+            sh " cp -r /var/lib/jenkins/workspace/amazon/index.html /var/www/amazon.com/public_html"
+           }
             }
         }
     }
